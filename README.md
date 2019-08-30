@@ -1,2 +1,2 @@
 # Chess
-Old/Not-working Chess AI code
+Experimental Chess AI code
