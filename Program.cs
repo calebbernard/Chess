@@ -22,10 +22,10 @@ namespace Chess
             }
             Random rng = new Random();
             Stopwatch sw = new Stopwatch();
-            
 
-            var Player1 = new Agents.StudiousML("StudiousML-Claustrophilia", rng, new Agents.Claustrophilia());
-            var Player2 = new Agents.RandomPlayer(rng);
+
+            var Player1 = new Agents.ML("ML", rng);
+            var Player2 = new Agents.ML("ML2", rng);
             
             // eventually, config this
             Console.WriteLine("spacebar to visualize, else just the digest");
@@ -53,7 +53,7 @@ namespace Chess
                 if (!visualize)
                 {
                     sw.Stop();
-                    Console.WriteLine("Game {0}: {1} - Time: {2}, MLRatio: {3}", games, result, sw.Elapsed, Player1.getGuessRatio());
+                    Console.WriteLine("Game {0}: {1} - Time: {2}", games, result, sw.Elapsed);
                 }
             }
         }

@@ -91,7 +91,8 @@ namespace Chess.Agents
                 if (Operations.winner(playerColor, b) == 0)
                 {
                     // avoid draw at all costs. prefer loss to draw. only draw if there is no non-drawing move available.
-                    score = -1;
+                    // undone a year later, moving away from this
+                    score = 0;
                 }
                 else if (Operations.winner(playerColor, b) == 1)
                 {
@@ -99,7 +100,7 @@ namespace Chess.Agents
                 }
                 else if (Operations.winner(playerColor, b) == -1)
                 {
-                    score = 0;
+                    score = -1;
                 }
             }
             return score;
@@ -340,7 +341,8 @@ namespace Chess.Agents
         public double score(){
             if (winCount + lossCount == 0)
             {
-                return 0.5; // prevent div by 0
+                // return 0.5; // prevent div by 0
+                return 0.76; // new idea: prefer the unknown to a mediocre known
             }
             return ((double)winCount / (double)(winCount + lossCount));
         }
